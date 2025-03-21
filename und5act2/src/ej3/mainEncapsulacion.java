@@ -12,6 +12,6 @@ public class mainEncapsulacion {
         System.out.println("Vas a imprimir " + impresora.imprimirPaginas(53) + " páginas");
 
         System.out.println("Has impreso un total de " + impresora.getPaginasImpresas() + " páginas");
-
+        
     }
 }

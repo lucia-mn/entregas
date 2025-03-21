@@ -1,5 +1,3 @@
-package polimorfismoPintura;
-
 public class Forma {
 
     //atributo
@@ -19,7 +17,7 @@ public class Forma {
     @Override
     public String toString() {
         return "Forma{" +
-                "\nnombre='" + nombre + '\'' +
+                "nombre='" + nombre + '\'' +
                 '}';
     }
 }
@@ -43,15 +41,6 @@ class Esfera extends Forma {
     public double area() {
         return 4 * Math.PI * Math.pow(radio, 2);
     }
-
-
-    @Override
-    public String toString() {
-        return "Esfera{" +
-                "radio=" + radio +
-                ", nombre='" + nombre + '\'' +
-                '}';
-    }
 }
 
 
@@ -71,16 +60,7 @@ class Rectangulo extends Forma {
     //método
     @Override
     public double area() {
-        return largo * ancho;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Rectangulo{" +
-                "ancho=" + ancho +
-                ", nombre='" + nombre + '\'' +
-                '}';
+        return largo*ancho;
     }
 }
 
@@ -101,24 +81,15 @@ class Cilindro extends Forma {
     //método
     @Override
     public double area() {
-        return 2 * Math.PI * Math.pow(radio, 2) + 2 * Math.PI * radio * altura;
-        //area cilindro = 2πr2+2πrh
+        return Math.PI * Math.pow(radio, 2) * altura;
     }
 
-
-    /*@Override
-    public String toString() {
-        return "Cilindro{" +
-                "\nradio=" + radio +
-                "\n, altura=" + altura +
-                '}';
-    }*/
 
     @Override
     public String toString() {
         return "Cilindro{" +
-                "altura=" + altura +
-                ", nombre='" + nombre + '\'' +
+                "radio=" + radio +
+                ", altura=" + altura +
                 '}';
     }
 }

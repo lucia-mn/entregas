@@ -1,56 +1,27 @@
 package ej3.JUnit;
 
-
 public class Color {
 
     public static String queColorSoy(String nombre) {
+
         if (nombre == null || nombre.isEmpty()) {
-            return "desconocido";
-        }
+            return "no existe";
 
-        char primeraLetra = Character.toUpperCase(nombre.charAt(0));
-
-        if ("ABCDEF".indexOf(primeraLetra) != -1) {
+        } else if (nombre.charAt(0) >= 'A' && nombre.charAt(0) <= 'F') {
             return "rojo";
-        } else if ("GHIJKLM".indexOf(primeraLetra) != -1) {
+
+        } else if (nombre.charAt(0) >= 'G' && nombre.charAt(0) <= 'M') {
             return "verde";
-        } else if ("NOPQRS".indexOf(primeraLetra) != -1) {
+
+        } else if (nombre.charAt(0) >= 'N' && nombre.charAt(0) <= 'S') {
             return "azul";
-        } else if ("TUVWXYZ".indexOf(primeraLetra) != -1) {
+
+        } else if (nombre.charAt(0) >= 'T' && nombre.charAt(0) <= 'Z') {
             return "amarillo";
-        }
 
-        return "desconocido";
-    }
-
-
-
-    public static String queColorSoy2(String nombre) {
-        if (nombre == null || nombre.isEmpty()) {
-            return "desconocido";
-        }
-
-        char primeraLetra = Character.toUpperCase(nombre.charAt(0));
-
-        // Verificamos si el carácter no está en el rango ASCII de A-Z
-        if (primeraLetra < 'A' || primeraLetra > 'Z') {
+        } else {
             return "blanco";
         }
-
-        if ("ABCDEF".indexOf(primeraLetra) != -1) {
-            return "rojo";
-        } else if ("GHIJKLM".indexOf(primeraLetra) != -1) {
-            return "verde";
-        } else if ("NOPQRS".indexOf(primeraLetra) != -1) {
-            return "azul";
-        } else if ("TUVWXYZ".indexOf(primeraLetra) != -1) {
-            return "amarillo";
-        }
-
-        return "desconocido";
     }
 
-
-
 }
-
