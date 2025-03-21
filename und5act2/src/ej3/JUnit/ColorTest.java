@@ -39,5 +39,6 @@ class ColorTest {
         assertEquals("amarillo", Color.queColorSoy("Zacarías"));
 
         assertEquals("blanco", Color.queColorSoy("!Zacarías"));
+        assertEquals("amarillo", Color.queColorSoy("!Zacarías"));
     }
 }

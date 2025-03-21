@@ -11,24 +11,25 @@ class FormaTest {
 
     @Test
     public void ToString() {
-        assertTrue(esfera.toString().contains("Esfera"));
-        assertTrue(rectangulo.toString().contains("Rectangulo"));
-        assertTrue(cilindro.toString().contains("Cilindro"));
+        assertEquals("Esfera{radio=10.0, nombre='Esfera'}", esfera.toString());
+        assertEquals("Rectangulo{ancho=10.0, nombre='Rectangulo'}", rectangulo.toString());
+        assertEquals("Cilindro{altura=14.0, nombre='Cilindro'}", cilindro.toString());
     }
 
     @Test
     public void Area() {
-        assertEquals(4 * Math.PI * Math.pow(10, 2), esfera.area(), 0.1);
-        assertEquals(5 * 10, rectangulo.area(), 0.1);
-        assertEquals(2 * Math.PI * Math.pow(7, 2) + 2 * Math.PI * 7 * 14, cilindro.area(), 0.1);
+        assertEquals(1256.6370614359173, esfera.area());
+        assertEquals(50, rectangulo.area());
+        assertEquals(923.6282401553991, cilindro.area());
     }
 
     @Test
     public void Pintura() {
         Pintura pintura = new Pintura(200);
 
-        assertEquals(esfera.area() / 200, pintura.cantidadPintura(esfera), 0.1);
-        assertEquals(rectangulo.area() / 200, pintura.cantidadPintura(rectangulo), 0.1);
-        assertEquals(cilindro.area() / 200, pintura.cantidadPintura(cilindro), 0.1);
+        assertEquals(esfera.area() / 200, pintura.cantidadPintura(esfera));
+        assertEquals(rectangulo.area() / 200, pintura.cantidadPintura(rectangulo));
+        assertEquals(cilindro.area() / 200, pintura.cantidadPintura(cilindro));
     }
+
 }
