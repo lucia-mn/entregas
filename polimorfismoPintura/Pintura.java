@@ -1,4 +1,4 @@
-package polimorfismoPintura;
+package ej3.polimorfismoPintura;
 
 public class Pintura {
 
