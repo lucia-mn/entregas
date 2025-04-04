@@ -1,0 +1,34 @@
+<RESENAS>
+    <Resena>
+        <idResena>R001</idResena>
+        <idProducto>5</idProducto>
+        <calificacion>10</calificacion>
+        <contenido>Increíble juego, gráficos espectaculares y una historia atrapante</contenido>
+        <fPublicacion>2024-02-15</fPublicacion>
+        <idUsuario>1001</idUsuario>
+    </Resena>
+    <Resena>
+        <idResena>R002</idResena>
+        <idProducto>4</idProducto>
+        <calificacion>8</calificacion>
+        <contenido>Muy buen juego, aunque todavía se puede mejorar</contenido>
+        <fPublicacion>2024-01-28</fPublicacion>
+        <idUsuario>1002</idUsuario>
+    </Resena>
+    <Resena>
+        <idResena>R003</idResena>
+        <idProducto>3</idProducto>
+        <calificacion>6</calificacion>
+        <contenido>Entretenido, pero la jugabilidad se vuelve repetitiva después de un tiempo</contenido>
+        <fPublicacion>2023-12-10</fPublicacion>
+        <idUsuario>1003</idUsuario>
+    </Resena>
+    <Resena>
+        <idResena>R004</idResena>
+        <idProducto>2</idProducto>
+        <calificacion>4</calificacion>
+        <contenido>Esperaba más, la IA de los enemigos es bastante floja</contenido>
+        <fPublicacion>2023-11-05</fPublicacion>
+        <idUsuario>1004</idUsuario>
+    </Resena>
+</RESENAS>

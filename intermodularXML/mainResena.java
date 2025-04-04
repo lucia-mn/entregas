@@ -1,9 +1,16 @@
 package intermodularXML;
 
+import intermodularColeccionDatos.Resena;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.reflect.Field;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 
 //lucia mendiola naharro
 
@@ -50,6 +57,10 @@ public class mainResena {
                     pasarAXml(listaResenas);
                     break;
 
+                case 8:
+                    generarXMLResenas(listaResenas);
+                    break;
+
                 default:
                     System.out.println("Opción no válida, introduce un número del menú de opciones");
                     break;
@@ -70,6 +81,7 @@ public class mainResena {
         System.out.println("5. Imprimir reseñas");
         System.out.println("6. Salir");
         System.out.println("7. Pasar de JAVA a XML");
+        System.out.println("8. Generar archivo .xml");
         System.out.print("Selecciona una opción: ");
     }
 
@@ -201,6 +213,41 @@ public class mainResena {
                 System.out.println("      </resenaJuego>\n");
             }
             System.out.println("</RESENAS>");
+        }
+    }
+
+
+    public static void generarXMLResenas(ArraydeResena listaResenas) {
+
+        // ruta del fichero .,xml a cambiar
+        File archivoXML = new File("/intermodularXML/resenas.xml");
+
+        try (FileWriter O = new FileWriter(archivoXML)) {
+
+            O.write("<RESENAS>\n");
+                for (Resena resena : listaResenas.getResenas()) {
+                    O.write("    <Resena>\n");
+
+                    Class<?> c = resena.getClass();
+                    for (Field field : c.getDeclaredFields()) {
+                        field.setAccessible(true);
+
+                        try {
+                            O.write("        <" + field.getName() + ">" + field.get(resena) + "</" + field.getName() + ">\n");
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    O.write("    </Resena>\n");
+                }
+            O.write("</RESENAS>\n");
+
+            System.out.println("Reseña creada en un archivo .xml");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error con el archivo");
         }
     }
 

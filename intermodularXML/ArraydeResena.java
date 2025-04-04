@@ -1,5 +1,7 @@
 package intermodularXML;
 
+import intermodularColeccionDatos.Resena;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -36,7 +38,7 @@ public class ArraydeResena {
         Iterator<Resena> iterator = resenas.iterator();
         while (iterator.hasNext()) {
             Resena resena = iterator.next();
-            if (resena.getIdResena().equalsIgnoreCase(idResena)) {
+            if (resena.getIdResena().equals(idResena)) {
                 iterator.remove();
                 return true;
             }
