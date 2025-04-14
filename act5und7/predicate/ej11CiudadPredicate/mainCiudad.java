@@ -16,7 +16,7 @@ public class mainCiudad {
         ciudades.add(new Ciudad("MAdrid", 884412));
         ciudades.add(new Ciudad("Elda", 90675));
 
-        imprimirCiudades(ciudades, ciudad);
+        imprimirCiudades2(ciudades, ciudad);
 
     }
 
@@ -27,5 +27,9 @@ public class mainCiudad {
                 System.out.println(c);
             }
         }
+    }
+
+    public static void imprimirCiudades2(List<Ciudad> ciudades, Predicate<Ciudad> ciudad) {
+        ciudades.stream().filter(ciudad).forEach(ciudad1 -> System.out.println(ciudad1));
     }
 }
